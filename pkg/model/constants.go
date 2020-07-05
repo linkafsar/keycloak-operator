@@ -5,7 +5,7 @@ const (
 	ApplicationName                      = "keycloak"
 	MonitoringKey                        = "middleware"
 	DatabaseSecretName                   = ApplicationName + "-db-secret"
-	PostgresqlPersistentVolumeName       = ApplicationName + "-postgresql-claim"
+	PostgresqlPersistentVolumeName       = ApplicationName + "-pv-postgress"
 	PostgresqlBackupPersistentVolumeName = ApplicationName + "-backup"
 	PostgresqlDeploymentName             = ApplicationName + "-postgresql"
 	KeycloakProbesName                   = ApplicationName + "-probes"
@@ -18,7 +18,7 @@ const (
 	PostgresqlDatabase                   = "root"
 	PostgresqlUsername                   = ApplicationName
 	PostgresqlPasswordLength             = 32
-	PostgresqlPersistentVolumeCapacity   = "1Gi"
+	PostgresqlPersistentVolumeCapacity   = "10Gi"
 	PostgresqlPersistentVolumeMountPath  = "/var/lib/pgsql/data"
 	DatabaseSecretUsernameProperty       = "POSTGRES_USERNAME" // nolint
 	DatabaseSecretPasswordProperty       = "POSTGRES_PASSWORD" // nolint
@@ -47,7 +47,7 @@ const (
 	ClientSecretName                      = ApplicationName + "-client-secret"
 	ClientSecretClientIDProperty          = "CLIENT_ID"
 	ClientSecretClientSecretProperty      = "CLIENT_SECRET"
-	MaxUnavailableNumberOfPods            = 1
+	MaxUnavailableNumberOfPods            = 2
 	PodMonitorName                        = ApplicationName + "-pod-monitor"
 	ServiceMonitorName                    = ApplicationName + "-service-monitor"
 	MigrateBackupName                     = "migrate-backup"
